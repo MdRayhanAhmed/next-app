@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+  /* themes: false; */
+}
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -13,12 +17,16 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --foreground: #ededed; */
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* padding: 1rem; */
+}
+@layer base {
+  h1 {
+    @apply font-extrabold text-2xl mb-3;
+  }
 }
