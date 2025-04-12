@@ -7,7 +7,9 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
   return (
     <main>
-      <h1>Hello {session && <span>{session.user!.name}</span>}</h1>
+      <h1>
+        Hello <span>{session ? session.user!.name : "World."}</span>
+      </h1>
       <Link href="/users">Home</Link>
       <ProductCard />
     </main>
